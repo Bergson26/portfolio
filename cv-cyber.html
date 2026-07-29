@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Bergson Aquereburu · Analyste Cybersécurité · SOC · GRC · DevSecOps</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0d1829;--ink2:#1e3a5f;--ink3:#475569;
+  --c:#0d9488;--cl:#ccfbf1;--cm:#0f766e;
+  --v:#7c3aed;--vl:#ede9fe;
+  --a:#b45309;--al:#fef3c7;
+  --r:#dc2626;--rl:#fee2e2;
+  --g:#15803d;--gl:#dcfce7;
+  --sep:#e2e8f0;--bg:#f0f4f8;--white:#fff;
+  --ff:"Segoe UI",system-ui,-apple-system,sans-serif;
+  --fm:"Consolas","Cascadia Code",monospace;
+  font-size:13px;
+}
+html{background:var(--bg);color:var(--ink);font-family:var(--ff);line-height:1.5}
+body{max-width:960px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
+
+@media print{
+  body{padding:0;max-width:100%;font-size:10px}
+  .no-print{display:none!important}
+  .page{box-shadow:none;border:none;border-radius:0}
+  a{color:inherit;text-decoration:none}
+  .cv-head{padding:1rem 1.5rem}
+  .sidebar{padding:1rem .9rem}
+  .main{padding:1rem 1.2rem}
+  .s-block{margin-bottom:.9rem}
+  .exp-block{margin-bottom:.9rem}
+  .star-block{margin-top:.35rem}
+}
+
+.no-print{text-align:center;margin-bottom:1.2rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.print-btn{padding:.45rem 1.4rem;background:var(--c);color:#fff;border:none;border-radius:5px;font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em}
+.print-btn:hover{background:var(--cm)}
+.back-btn{padding:.45rem 1.2rem;background:transparent;color:var(--ink3);border:1px solid var(--sep);border-radius:5px;font-size:.8rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
+.back-btn:hover{border-color:var(--c);color:var(--c)}
+
+.page{background:var(--white);border:1px solid var(--sep);border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+
+/* ── Header ── */
+.cv-head{background:var(--ink);color:#fff;padding:1.8rem 2rem;position:relative;overflow:hidden}
+.cv-head::before{content:'';position:absolute;top:-60px;right:-50px;width:200px;height:200px;border:1px solid rgba(13,148,136,.15);border-radius:50%}
+.cv-head::after{content:'';position:absolute;bottom:-40px;right:20px;width:140px;height:140px;border:1px solid rgba(13,148,136,.1);border-radius:50%}
+.head-grid{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;position:relative;z-index:1}
+.cv-name{font-size:1.7rem;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:.2rem;color:#fff}
+.cv-name b{color:#2dd4bf}
+.cv-title{font-size:.75rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem;line-height:1.5}
+.cv-contacts{display:flex;flex-wrap:wrap;gap:.3rem .8rem;font-size:.7rem;color:rgba(255,255,255,.6)}
+.cv-contacts span{display:flex;align-items:center;gap:.3rem}
+.cv-contacts a{color:rgba(255,255,255,.6);text-decoration:none}
+.cv-contacts a:hover{color:#2dd4bf}
+.head-tags{display:flex;flex-direction:column;gap:.4rem;align-items:flex-end}
+.htag{font-size:.64rem;padding:.2rem .6rem;border-radius:100px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.ht-c{background:rgba(13,148,136,.2);color:#5eead4;border:1px solid rgba(13,148,136,.3)}
+.ht-v{background:rgba(124,58,237,.2);color:#c4b5fd;border:1px solid rgba(139,92,246,.25)}
+.ht-a{background:rgba(180,83,9,.2);color:#fcd34d;border:1px solid rgba(245,158,11,.25)}
+.ht-r{background:rgba(220,38,38,.2);color:#fca5a5;border:1px solid rgba(239,68,68,.25)}
+
+/* ── Layout ── */
+.cv-body{display:grid;grid-template-columns:215px 1fr;gap:0}
+.sidebar{background:#f8fafc;padding:1.3rem 1.2rem;border-right:1px solid var(--sep)}
+.main{padding:1.3rem 1.6rem}
+
+/* ── Section titles ── */
+.s-head{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:.75rem;padding-bottom:.3rem;border-bottom:1.5px solid var(--cl);display:flex;align-items:center;gap:.4rem}
+.s-head::before{content:'';width:3px;height:11px;background:var(--c);border-radius:2px;flex-shrink:0}
+.s-block{margin-bottom:1.4rem}
+.s-head.v{color:var(--v);border-bottom-color:var(--vl)}
+.s-head.v::before{background:var(--v)}
+.s-head.a{color:var(--a);border-bottom-color:var(--al)}
+.s-head.a::before{background:var(--a)}
+
+/* ── Sidebar skills ── */
+.sg-title{font-size:.62rem;font-weight:700;color:var(--ink2);letter-spacing:.04em;margin:.6rem 0 .28rem;text-transform:uppercase}
+.sg-title:first-child{margin-top:0}
+.stags{display:flex;flex-wrap:wrap;gap:.2rem}
+.st{font-size:.6rem;padding:.1rem .38rem;border-radius:3px;font-family:var(--fm);line-height:1.4}
+.st-c{background:var(--cl);color:var(--cm);border:1px solid #99f6e4}
+.st-v{background:var(--vl);color:var(--v);border:1px solid #ddd6fe}
+.st-a{background:var(--al);color:var(--a);border:1px solid #fde68a}
+.st-r{background:var(--rl);color:var(--r);border:1px solid #fecaca}
+.st-g{background:var(--gl);color:var(--g);border:1px solid #bbf7d0}
+.st-n{background:#f1f5f9;color:var(--ink3);border:1px solid var(--sep)}
+
+/* ── Sidebar info blocks ── */
+.si-label{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:.15rem;margin-top:.5rem}
+.si-value{font-size:.68rem;color:var(--ink2);line-height:1.5}
+.si-value a{color:var(--c);text-decoration:none}
+
+/* ── Highlight bar ── */
+.highlight-bar{background:linear-gradient(135deg,rgba(13,148,136,.07),rgba(124,58,237,.05));border:1px solid rgba(13,148,136,.18);border-radius:6px;padding:.55rem .75rem;margin-bottom:1.2rem;font-size:.72rem;color:var(--ink2);line-height:1.6}
+.highlight-bar strong{color:var(--cm)}
+
+/* ── Experience ── */
+.exp-block{margin-bottom:1.3rem;padding-bottom:1.3rem;border-bottom:1px dashed var(--sep)}
+.exp-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.exp-header{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .6rem;margin-bottom:.15rem}
+.exp-role{font-size:.82rem;font-weight:700;color:var(--ink)}
+.exp-company{font-size:.82rem;color:var(--c);font-weight:600}
+.exp-company.v{color:var(--v)}
+.exp-company.a{color:var(--a)}
+.exp-company.g{color:var(--g)}
+.exp-meta{font-size:.66rem;color:var(--ink3);display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:.55rem}
+.exp-meta span{display:flex;align-items:center;gap:.25rem}
+
+/* ── STAR blocks inside experience ── */
+.star-block{margin-bottom:.5rem}
+.star-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--c);margin-bottom:.18rem}
+.star-label.v{color:var(--v)}
+.star-label.a{color:var(--a)}
+.star-label.g{color:var(--g)}
+.star-text{font-size:.73rem;color:var(--ink3);line-height:1.62}
+.star-text strong{color:var(--ink)}
+
+/* ── Result badges ── */
+.results{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.35rem}
+.rbadge{font-size:.63rem;padding:.1rem .45rem;border-radius:3px;background:var(--gl);color:var(--g);border:1px solid #bbf7d0;display:flex;align-items:center;gap:.2rem}
+.rbadge.r{background:var(--rl);color:var(--r);border-color:#fecaca}
+.rbadge.c{background:var(--cl);color:var(--cm);border-color:#99f6e4}
+
+/* ── Tech tags in experience ── */
+.exp-tags{display:flex;flex-wrap:wrap;gap:.2rem;margin-top:.45rem}
+.etag{font-size:.6rem;padding:.1rem .38rem;border-radius:3px;background:#f1f5f9;color:var(--ink3);border:1px solid var(--sep);font-family:var(--fm)}
+
+/* ── Project mini-cards ── */
+.proj-list{display:flex;flex-direction:column;gap:.7rem}
+.proj-item{border:1px solid var(--sep);border-radius:5px;padding:.55rem .7rem;position:relative}
+.proj-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;background:var(--c)}
+.proj-item.v::before{background:var(--v)}
+.proj-item.a::before{background:var(--a)}
+.proj-name{font-size:.75rem;font-weight:700;color:var(--ink);margin-bottom:.12rem}
+.proj-desc{font-size:.68rem;color:var(--ink3);line-height:1.55}
+.proj-desc strong{color:var(--ink)}
+.proj-stack-mini{display:flex;flex-wrap:wrap;gap:.18rem;margin-top:.3rem}
+.psm{font-size:.58rem;padding:.08rem .32rem;border-radius:3px;background:var(--cl);color:var(--cm);border:1px solid #99f6e4;font-family:var(--fm)}
+.psm.v{background:var(--vl);color:var(--v);border-color:#ddd6fe}
+.psm.n{background:#f1f5f9;color:var(--ink3);border-color:var(--sep)}
+
+/* ── Education ── */
+.edu-block{margin-bottom:.9rem}
+.edu-degree{font-size:.76rem;font-weight:700;color:var(--ink)}
+.edu-school{font-size:.71rem;color:var(--c);font-weight:600}
+.edu-period{font-size:.65rem;color:var(--ink3);margin-bottom:.2rem}
+.edu-desc{font-size:.68rem;color:var(--ink3);line-height:1.55}
+.edu-badge{display:inline-block;font-size:.6rem;padding:.1rem .4rem;border-radius:100px;font-weight:700;letter-spacing:.04em;margin-bottom:.2rem}
+.edu-badge.main{background:rgba(13,148,136,.1);color:var(--cm);border:1px solid rgba(13,148,136,.25)}
+.edu-badge.ok{background:var(--gl);color:var(--g);border:1px solid #bbf7d0}
+.edu-badge.prev{background:var(--vl);color:var(--v);border:1px solid #ddd6fe}
+
+/* ── Langues / Certs ── */
+.lang-row{display:flex;justify-content:space-between;align-items:center;font-size:.69rem;padding:.2rem 0;border-bottom:1px solid var(--sep)}
+.lang-row:last-child{border-bottom:none}
+.lang-name{color:var(--ink2);font-weight:600}
+.lang-level{color:var(--ink3)}
+.lang-bar-wrap{width:60px;height:4px;background:#e2e8f0;border-radius:2px;margin-left:.4rem;flex-shrink:0}
+.lang-bar{height:100%;border-radius:2px;background:var(--c)}
+
+/* ── Quote ── */
+.exp-quote{border-left:2px solid rgba(13,148,136,.3);padding-left:.6rem;margin-top:.5rem;font-style:italic;color:var(--ink3);font-size:.67rem;line-height:1.55}
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <a href="portfolio.html" class="back-btn">← Portfolio</a>
+  <button class="print-btn" onclick="window.print()">⬇ Exporter PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- ====== HEADER ====== -->
+  <div class="cv-head">
+    <div class="head-grid">
+      <div>
+        <div class="cv-name">Bergson <b>Aquereburu</b></div>
+        <div class="cv-title">Analyste Cybersécurité · SOC · GRC · DevSecOps — Recherche alternance Mastère CESI Sept. 2026</div>
+        <div class="cv-contacts">
+          <span>✉ <a href="mailto:bjmsaquereburu@gmail.com">bjmsaquereburu@gmail.com</a></span>
+          <span>🔗 <a href="https://bergson26.github.io/portfolio" target="_blank">bergson26.github.io/portfolio</a></span>
+          <span>🐙 <a href="https://github.com/Bergson26" target="_blank">github.com/Bergson26</a></span>
+          <span>📍 Amiens · Mobilité nationale</span>
+        </div>
+      </div>
+      <div class="head-tags">
+        <span class="htag ht-c">SOC · SIEM · Wazuh</span>
+        <span class="htag ht-v">EBIOS RM · ISO 27001</span>
+        <span class="htag ht-a">DevSecOps · GitHub Actions</span>
+        <span class="htag ht-r">Nessus · Burp Suite · Nmap</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-body">
+
+    <!-- ====== SIDEBAR ====== -->
+    <div class="sidebar">
+
+      <div class="s-block">
+        <div class="s-head">Compétences cyber</div>
+
+        <div class="sg-title">SOC · SIEM · Détection</div>
+        <div class="stags">
+          <span class="st st-c">Wazuh 4.7</span>
+          <span class="st st-c">OpenSearch</span>
+          <span class="st st-c">Fail2ban</span>
+          <span class="st st-c">Log Analysis</span>
+          <span class="st st-c">Alerting</span>
+          <span class="st st-c">File Integrity</span>
+          <span class="st st-c">Incident Response</span>
+        </div>
+
+        <div class="sg-title">Audit · Pentest · Vulns</div>
+        <div class="stags">
+          <span class="st st-r">Nessus</span>
+          <span class="st st-r">OpenVAS</span>
+          <span class="st st-r">Burp Suite</span>
+          <span class="st st-r">Nmap</span>
+          <span class="st st-r">Wireshark</span>
+          <span class="st st-r">CVSS</span>
+          <span class="st st-r">CVE · NVD API</span>
+          <span class="st st-r">python-nmap</span>
+        </div>
+
+        <div class="sg-title">GRC · Gouvernance</div>
+        <div class="stags">
+          <span class="st st-v">EBIOS Risk Manager</span>
+          <span class="st st-v">ISO 27001</span>
+          <span class="st st-v">RGPD Art.30</span>
+          <span class="st st-v">ANSSI</span>
+          <span class="st st-v">Analyse de risques</span>
+          <span class="st st-v">PSSI</span>
+          <span class="st st-v">NIST</span>
+        </div>
+
+        <div class="sg-title">IAM · Systèmes</div>
+        <div class="stags">
+          <span class="st st-a">Active Directory</span>
+          <span class="st st-a">GPO</span>
+          <span class="st st-a">PowerShell</span>
+          <span class="st st-a">OpenVPN</span>
+          <span class="st st-a">VLAN</span>
+          <span class="st st-a">SSH Key-Only</span>
+          <span class="st st-a">Durcissement Linux</span>
+        </div>
+
+        <div class="sg-title">DevSecOps · CI/CD</div>
+        <div class="stags">
+          <span class="st st-c">GitHub Actions</span>
+          <span class="st st-c">Semgrep (SAST)</span>
+          <span class="st st-c">Gitleaks</span>
+          <span class="st st-c">Trivy (SCA)</span>
+          <span class="st st-c">Bandit</span>
+          <span class="st st-c">Docker</span>
+          <span class="st st-c">Ansible</span>
+        </div>
+
+        <div class="sg-title">Cloud · Infra · Monitoring</div>
+        <div class="stags">
+          <span class="st st-n">AWS EC2/S3/RDS</span>
+          <span class="st st-n">Prometheus</span>
+          <span class="st st-n">Grafana</span>
+          <span class="st st-n">WSL2</span>
+          <span class="st st-n">Ubuntu Server</span>
+        </div>
+
+        <div class="sg-title">Langages</div>
+        <div class="stags">
+          <span class="st st-g">Python 3</span>
+          <span class="st st-g">Bash</span>
+          <span class="st st-g">PowerShell</span>
+          <span class="st st-g">PHP 8</span>
+          <span class="st st-g">SQL</span>
+        </div>
+      </div>
+
+      <div class="s-block">
+        <div class="s-head">Formation</div>
+
+        <div class="edu-block">
+          <div class="edu-badge main">À venir · Sept. 2026</div>
+          <div class="edu-degree">Mastère Cybersécurité & SSI</div>
+          <div class="edu-school">CESI École d'Ingénieurs</div>
+          <div class="edu-period">2026–2028 · RNCP Niv. 7 · Alternance 24 mois</div>
+          <div class="edu-desc">SOC, GRC, architecture sécurisée, management des risques.</div>
+        </div>
+
+        <div class="edu-block">
+          <div class="edu-badge ok">En cours</div>
+          <div class="edu-degree">L3 Administration Systèmes & Infrastructure</div>
+          <div class="edu-school">École-IT Amiens</div>
+          <div class="edu-period">2025–2026</div>
+          <div class="edu-desc">Linux/Windows, réseaux, virtualisation, AD, DNS, GPO.</div>
+        </div>
+
+        <div class="edu-block">
+          <div class="edu-badge prev">Diplômé</div>
+          <div class="edu-degree">Licence Sécurité Informatique</div>
+          <div class="edu-school">IFRI — Cotonou, Bénin</div>
+          <div class="edu-period">2021–2024</div>
+          <div class="edu-desc">Cryptographie, sécurité réseau, programmation Python/C.</div>
+        </div>
+      </div>
+
+      <div class="s-block">
+        <div class="s-head">Langues</div>
+        <div class="lang-row">
+          <span class="lang-name">Français</span>
+          <div style="display:flex;align-items:center;gap:.3rem">
+            <span class="lang-level">C2</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+          </div>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Anglais</span>
+          <div style="display:flex;align-items:center;gap:.3rem">
+            <span class="lang-level">A2→B2</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:40%"></div></div>
+          </div>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Fon</span>
+          <div style="display:flex;align-items:center;gap:.3rem">
+            <span class="lang-level">Natif</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s-block">
+        <div class="s-head">Recherche</div>
+        <div class="si-label">Contrat visé</div>
+        <div class="si-value">Alternance 24 mois<br>Mastère Cybersécurité CESI</div>
+        <div class="si-label">Disponibilité</div>
+        <div class="si-value">Septembre 2026</div>
+        <div class="si-label">Poste ciblé</div>
+        <div class="si-value">Analyste SOC · GRC<br>Chef de Projet SSI · DevSecOps</div>
+        <div class="si-label">Mobilité</div>
+        <div class="si-value">France entière (Amiens base)</div>
+      </div>
+
+    </div>
+
+    <!-- ====== MAIN ====== -->
+    <div class="main">
+
+      <div class="highlight-bar">
+        Étudiant en <strong>Licence 3 Administration Systèmes &amp; Infrastructure</strong> (École-IT Amiens), 3 stages en cybersécurité et administration systèmes. Spécialisation <strong>SOC/SIEM (Wazuh 4.7)</strong>, <strong>GRC (EBIOS Risk Manager, ISO 27001, RGPD)</strong> et <strong>DevSecOps</strong> (pipeline GitHub Actions 11 étapes : Gitleaks, Semgrep, Trivy, Bandit, Ansible, AWS). Recherche alternance <strong>Mastère Cybersécurité CESI</strong> — septembre 2026.
+      </div>
+
+      <!-- EXPÉRIENCES -->
+      <div class="s-block">
+        <div class="s-head">Expériences professionnelles</div>
+
+        <!-- LOGIS -->
+        <div class="exp-block">
+          <div class="exp-header">
+            <span class="exp-role">Assistant Cybersécurité</span>
+            <span class="exp-company">— Logis Hôtel</span>
+          </div>
+          <div class="exp-meta">
+            <span>📅 Juin 2026 – Août 2026 · Stage en cours</span>
+            <span>📍 Saint-Valery-sur-Somme</span>
+            <span>🏢 PME hôtelière indépendante — sans équipe IT</span>
+          </div>
+
+          <div class="star-block">
+            <div class="star-label">6 missions</div>
+            <div class="star-text">
+              <strong>M1 — Script Python VirusTotal :</strong> classification automatique des emails entrants (analyse entêtes, extraction URL, comparaison <strong>VirusTotal API</strong>) pour bloquer le phishing.<br>
+              <strong>M2 — Audit réseau :</strong> scan Nmap depuis Wi-Fi invités → <strong>0 host up</strong> (segmentation confirmée) ; scan interne → port <strong>445/SMB</strong> ouvert.<br>
+              <strong>M3 — Déploiement Wazuh 4.7.0 :</strong> installation agent Windows (PowerShell) sur PC réception, connexion Wazuh Manager 192.168.1.10, service démarré avec succès.<br>
+              <strong>M4 — Durcissement :</strong> 187 jours de mises à jour appliquées, verrouillage session, politique mdp renforcée, partage réseau <em>"Reservations"</em> non déclaré supprimé (<code>Remove-SmbShare -Force</code>).<br>
+              <strong>M5 — Phishing simulé :</strong> campagne auprès des réceptionnistes et direction (exemples d'emails frauduleux hôteliers réels).<br>
+              <strong>M6 — RGPD Art.30 :</strong> cartographie des traitements, fiche de traitement remise à la direction, 4 écarts identifiés et corrigés.
+            </div>
+          </div>
+
+          <div class="results">
+            <span class="rbadge c">Wazuh opérationnel</span>
+            <span class="rbadge">Partage "Reservations" supprimé</span>
+            <span class="rbadge">4 vulns remediées</span>
+            <span class="rbadge">Comptes admin : 5 → 2</span>
+            <span class="rbadge">Fiche RGPD Art.30 livrée</span>
+          </div>
+
+          <div class="exp-tags">
+            <span class="etag">Wazuh 4.7</span><span class="etag">Nmap</span><span class="etag">RGPD Art.30</span>
+            <span class="etag">PowerShell</span><span class="etag">VirusTotal API</span><span class="etag">Phishing simulé</span>
+            <span class="etag">SMB hardening</span><span class="etag">GPO</span>
+          </div>
+        </div>
+
+        <!-- BACH TECHNOLOGIE -->
+        <div class="exp-block">
+          <div class="exp-header">
+            <span class="exp-role">Stagiaire Cybersécurité &amp; Administration Systèmes</span>
+            <span class="exp-company v">— Bach Technologie</span>
+          </div>
+          <div class="exp-meta">
+            <span>📅 Février 2025 – Août 2025 · 6 mois</span>
+            <span>📍 Abomey-Calavi, Bénin</span>
+            <span>🏢 ESN multi-clients dont Padme (microfinance)</span>
+          </div>
+
+          <div class="star-block">
+            <div class="star-label v">9 missions — sélection des plus significatives</div>
+            <div class="star-text">
+              <strong>M1 — Audit IAM GPad / Padme :</strong> recensement comptes, croisement droits réels vs fonction → <strong>8 comptes orphelins</strong> + droits excessifs. Portail Laravel de gestion des accès par rôle avec log d'audit.<br>
+              <strong>M2 — IA / OCR mission SNERTP :</strong> système OCR automatisant la saisie des devis papier pour la Société Nationale d'Essais et Recherches des Travaux Publics — extraction texte, génération reçus, base comptable.<br>
+              <strong>M3 — SIEM Wazuh + incident réel :</strong> déploiement Wazuh Manager Ubuntu. Dans les 48h : brute-force SSH — <strong>347 tentatives / 10 min</strong> depuis IP externe. Blocage pare-feu + Fail2ban, documentation complète de l'incident.<br>
+              <strong>M4 — Durcissement + patch EternalBlue :</strong> traitement d'urgence de <strong>CVE-2017-0144 (CVSS 9.8)</strong> sur Windows Server 2016 — correctif MS17-010 + désactivation SMBv1. Surface d'attaque Nessus : <strong>23 → 8 vulnérabilités</strong>.<br>
+              <strong>M5 — Analyse de vulnérabilités (15 systèmes) :</strong> Nessus + OpenVAS + Burp Suite + Wireshark. SQLi confirmée, plan de remédiation priorisé CVSS suivi jusqu'à correction.
+            </div>
+          </div>
+
+          <div class="results">
+            <span class="rbadge r">EternalBlue CVSS 9.8 patchée</span>
+            <span class="rbadge">347 tentatives SSH bloquées</span>
+            <span class="rbadge">8 comptes orphelins désactivés</span>
+            <span class="rbadge c">23 → 8 vulns (Nessus)</span>
+            <span class="rbadge">OCR SNERTP livré</span>
+          </div>
+
+          <div class="exp-quote">« Ce stage m'a donné une vision complète du cycle : auditer, qualifier, corriger, documenter — et développer la solution moi-même quand nécessaire. »</div>
+
+          <div class="exp-tags">
+            <span class="etag">Nessus</span><span class="etag">OpenVAS</span><span class="etag">Burp Suite</span>
+            <span class="etag">Wazuh</span><span class="etag">Fail2ban</span><span class="etag">EternalBlue MS17-010</span>
+            <span class="etag">CVSS</span><span class="etag">RGPD Art.30</span><span class="etag">OCR / IA</span><span class="etag">Laravel 10</span>
+          </div>
+        </div>
+
+        <!-- TATS-INT -->
+        <div class="exp-block">
+          <div class="exp-header">
+            <span class="exp-role">Stagiaire Administration Systèmes &amp; Réseaux</span>
+            <span class="exp-company a">— TATS-INT</span>
+          </div>
+          <div class="exp-meta">
+            <span>📅 Septembre 2024 – Décembre 2024 · 4 mois</span>
+            <span>📍 Cotonou, Bénin</span>
+            <span>🏢 ~60 employés · Parc multi-VLANs</span>
+          </div>
+          <div class="star-block">
+            <div class="star-text">
+              Administration Active Directory (PowerShell : <strong>Get-ADUser, Disable-ADAccount</strong>). Identification de <strong>8 comptes d'anciens employés encore actifs</strong> → désactivés + procédure de révocation sous 24h formalisée. Configuration VLAN inter-services, migration VPN OpenVPN (remplacement PPTP obsolète). GPO déployées : mdp 12 chars min, expiration 90j, verrouillage 5 min, restriction USB. Traitement de 20 à 50 tickets/mois.
+            </div>
+          </div>
+          <div class="results">
+            <span class="rbadge">8 comptes AD désactivés</span>
+            <span class="rbadge c">60 postes / 5 VLANs — 0 interruption</span>
+            <span class="rbadge">VPN sécurisé pour 5 télétravailleurs</span>
+            <span class="rbadge">GPO uniformisées</span>
+          </div>
+          <div class="exp-tags">
+            <span class="etag">Active Directory</span><span class="etag">PowerShell</span><span class="etag">GPO</span>
+            <span class="etag">OpenVPN</span><span class="etag">VLAN</span><span class="etag">IAM</span>
+          </div>
+        </div>
+
+        <!-- SPTIC-UAC -->
+        <div class="exp-block">
+          <div class="exp-header">
+            <span class="exp-role">Stagiaire Support Informatique &amp; Réseaux</span>
+            <span class="exp-company" style="color:var(--g)">— SPTIC-UAC</span>
+          </div>
+          <div class="exp-meta">
+            <span>📅 Septembre 2023 – Novembre 2023 · 3 mois</span>
+            <span>📍 Abomey-Calavi, Bénin</span>
+            <span>🏢 Service IT Université d'Abomey-Calavi</span>
+          </div>
+          <div class="star-block">
+            <div class="star-text">
+              Installation et configuration de <strong>42 postes Windows et Linux</strong> (comptes, accès réseau, logiciels métier). Traitement de ~25 demandes utilisateurs/semaine. Première exposition à la relation technique/non-technique — base de toute démarche de sensibilisation.
+            </div>
+          </div>
+          <div class="exp-tags">
+            <span class="etag">Support N1</span><span class="etag">Windows/Linux</span><span class="etag">Ticketing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJETS CYBER -->
+      <div class="s-block">
+        <div class="s-head">Projets cybersécurité</div>
+        <div class="proj-list">
+
+          <div class="proj-item">
+            <div class="proj-name">VulnPy-Scanner — Automatisation audit de vulnérabilités</div>
+            <div class="proj-desc"><strong>python-nmap</strong> pour la cartographie réseau → enrichissement <strong>NIST NVD API v2.0</strong> (CVE, CVSS) → rapport priorisé automatisé. Interface Streamlit. Détecte <strong>EternalBlue CVE-2017-0144 (CVSS 9.8)</strong> en quelques minutes.</div>
+            <div class="proj-stack-mini">
+              <span class="psm">Python 3</span><span class="psm">python-nmap</span><span class="psm">NIST NVD API v2</span><span class="psm">Streamlit</span><span class="psm n">CVSS · CVE</span>
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-name">My-Home-SOC — Lab SOC personnel (Wazuh + OpenSearch)</div>
+            <div class="proj-desc"><strong>Wazuh Manager 4.7.0</strong> (Indexer + Manager + Dashboard) sur Ubuntu. Agents Linux/Windows. Règles personnalisées : brute-force SSH, connexions hors horaires, intégrité de fichiers. Fail2ban pour réponse automatisée. Incident simulé : <strong>347 tentatives SSH / 10 min → IP bloquée en 32 secondes</strong>.</div>
+            <div class="proj-stack-mini">
+              <span class="psm">Wazuh 4.7</span><span class="psm">OpenSearch</span><span class="psm">Fail2ban</span><span class="psm n">Ubuntu · WSL2</span>
+            </div>
+          </div>
+
+          <div class="proj-item v">
+            <div class="proj-name">DevSecOps Pipeline — LogiStock (GitHub Actions · 11 étapes)</div>
+            <div class="proj-desc">Pipeline CI/CD sécurisé : <strong>Gitleaks</strong> → <strong>Semgrep</strong> (SAST PHP/Laravel) → <strong>Bandit</strong> (Python) → <strong>Trivy</strong> (SCA) → Build Docker → Push GHCR → <strong>Ansible</strong> deploy AWS EC2 → Prometheus. Bloque tout commit contenant une faille critique avant production.</div>
+            <div class="proj-stack-mini">
+              <span class="psm v">GitHub Actions</span><span class="psm v">Gitleaks</span><span class="psm v">Semgrep</span><span class="psm v">Trivy</span><span class="psm n">AWS EC2 · Docker · Ansible</span>
+            </div>
+          </div>
+
+          <div class="proj-item a">
+            <div class="proj-name">RiskGuard — Outil EBIOS Risk Manager (Python · Streamlit)</div>
+            <div class="proj-desc">5 ateliers EBIOS RM interactifs → heatmap <strong>Impact × Vraisemblance (4×4)</strong> → génération plan de traitement (accepter/réduire/transférer/refuser) → export rapport ISO 27001 → intégration NIST NVD pour les scénarios techniques.</div>
+            <div class="proj-stack-mini">
+              <span class="psm">Python 3</span><span class="psm">Streamlit</span><span class="psm n">EBIOS RM · ISO 27001 · NIST</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
